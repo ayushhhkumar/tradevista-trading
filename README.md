@@ -1,4 +1,4 @@
-# TradeVista – Stock Trading Dashboard
+# TradeVista – Stock Trading Dashboard (Inspired by Zerodha)
 
 TradeVista is a **full-stack stock trading dashboard inspired by modern trading platforms such as Zerodha Kite**.
 The application allows users to monitor their stock portfolio, track positions, and place buy orders through an interactive dashboard interface.
