@@ -188,28 +188,46 @@ app.use(bodyParser.json());
 // Data Fetch
 
 app.get("/allHoldings", async (req, res) => {
-  let allHoldings = await HoldingsModel.find({});
-  res.json(allHoldings);
+  try {
+    const allHoldings = await HoldingsModel.find({});
+    res.json(allHoldings);
+  } catch (err) {
+    res.status(500).json({ error: "Error fetching holdings!" });
+  }
 });
 
 app.get("/allPositions", async (req, res) => {
-  let allPositions = await PositionsModel.find({});
-  res.json(allPositions);
+  try {
+    const allPositions = await PositionsModel.find({});
+    res.json(allPositions);
+  } catch (err) {
+    res.status(500).json({ error: "Error fetching positions!" });
+  }
 });
 
 app.post("/newOrder", async (req, res) => {
-  let newOrder = new OrdersModel({
-    name: req.body.name,
-    qty: req.body.qty,
-    price: req.body.price,
-    mode: req.body.mode,
-  });
-  newOrder.save();
-  res.send("Order saved!");
+  try {
+    const newOrder = new OrdersModel({
+      name: req.body.name,
+      qty: req.body.qty,
+      price: req.body.price,
+      mode: req.body.mode,
+    });
+    await newOrder.save();
+    res.json({ message: "Order saved successfully!" });
+  } catch (err) {
+    res.status(500).json({ error: "Error saying order!" });
+  }
 });
 
-app.listen(PORT, () => {
-  console.log("App started!");
-  mongoose.connect(uri);
-  console.log("DB Connected!");
-});
+mongoose
+  .connect(uri)
+  .then(() => {
+    console.log("MongoDB connected successfully!");
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:".err);
+  });
