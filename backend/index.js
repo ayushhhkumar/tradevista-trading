@@ -187,38 +187,47 @@ app.use(bodyParser.json());
 
 // Data Fetch
 
-app.get("/allHoldings", async (req, res) => {
-  try {
-    const allHoldings = await HoldingsModel.find({});
-    res.json(allHoldings);
-  } catch (err) {
-    res.status(500).json({ error: "Error fetching holdings!" });
+app.get(
+  "https://zerodha-backend-wrhv.onrender.com/allHoldings",
+  async (req, res) => {
+    try {
+      const allHoldings = await HoldingsModel.find({});
+      res.json(allHoldings);
+    } catch (err) {
+      res.status(500).json({ error: "Error fetching holdings!" });
+    }
   }
-});
+);
 
-app.get("/allPositions", async (req, res) => {
-  try {
-    const allPositions = await PositionsModel.find({});
-    res.json(allPositions);
-  } catch (err) {
-    res.status(500).json({ error: "Error fetching positions!" });
+app.get(
+  "https://zerodha-backend-wrhv.onrender.com/allPositions",
+  async (req, res) => {
+    try {
+      const allPositions = await PositionsModel.find({});
+      res.json(allPositions);
+    } catch (err) {
+      res.status(500).json({ error: "Error fetching positions!" });
+    }
   }
-});
+);
 
-app.post("/newOrder", async (req, res) => {
-  try {
-    const newOrder = new OrdersModel({
-      name: req.body.name,
-      qty: req.body.qty,
-      price: req.body.price,
-      mode: req.body.mode,
-    });
-    await newOrder.save();
-    res.json({ message: "Order saved successfully!" });
-  } catch (err) {
-    res.status(500).json({ error: "Error saying order!" });
+app.post(
+  "https://zerodha-backend-wrhv.onrender.com/newOrder",
+  async (req, res) => {
+    try {
+      const newOrder = new OrdersModel({
+        name: req.body.name,
+        qty: req.body.qty,
+        price: req.body.price,
+        mode: req.body.mode,
+      });
+      await newOrder.save();
+      res.json({ message: "Order saved successfully!" });
+    } catch (err) {
+      res.status(500).json({ error: "Error saying order!" });
+    }
   }
-});
+);
 
 mongoose
   .connect(uri)
