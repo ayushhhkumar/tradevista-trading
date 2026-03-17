@@ -14,6 +14,15 @@ Managing stock portfolios manually can be complex, time-consuming, and error-pro
 
 ---
 
+## 📸 Screenshots
+
+![Dashboard](screenshots/dashboard.png)
+![Frontend](screenshots/frontend.png)
+
+
+---
+
+
 ## 🚀 Live Application
 
 * 🔗 Frontend (Landing Page): https://zerodha-frontend-3qfs.onrender.com
