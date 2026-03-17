@@ -1,26 +1,40 @@
-# TradeVista – Stock Trading Dashboard (Inspired by Zerodha)
+# 📊 TradeVista – Stock Trading Dashboard (Inspired by Zerodha)
 
-TradeVista is a **full-stack stock trading dashboard inspired by modern trading platforms such as Zerodha Kite**.
-The application allows users to monitor their stock portfolio, track positions, and place buy orders through an interactive dashboard interface.
-
-This project demonstrates **full-stack MERN development, REST API integration, database management, and cloud deployment**.
+TradeVista is a full-stack stock trading dashboard inspired by modern platforms like Zerodha Kite. It allows users to monitor their stock portfolio, track positions, and simulate buy orders through an interactive and responsive interface.
 
 ---
 
-# Live Application
+## 🎯 Problem Statement
 
-Frontend (Landing Page)
-https://zerodha-frontend-3qfs.onrender.com
+Managing stock portfolios manually can be complex, time-consuming, and error-prone. TradeVista addresses this by providing a centralized dashboard where users can:
 
-Trading Dashboard
-https://zerodha-dashboard-gtnk.onrender.com
-
-Backend API
-https://zerodha-backend-wrhv.onrender.com
+* Track holdings and positions
+* Visualize portfolio performance
+* Simulate trading actions
 
 ---
 
-# Tech Stack
+## 🚀 Live Application
+
+* 🔗 Frontend (Landing Page): https://zerodha-frontend-3qfs.onrender.com
+* 🔗 Trading Dashboard: https://zerodha-dashboard-gtnk.onrender.com
+* 🔗 Backend API: https://zerodha-backend-wrhv.onrender.com
+  
+---
+
+## ✨ Key Features
+
+* 📈 Portfolio dashboard displaying stock holdings
+* 📊 Track open trading positions
+* 🛒 Place buy orders via dashboard
+* 🔄 REST API integration between frontend & backend
+* 📉 Interactive portfolio visualization
+* ⚡ Modular and scalable architecture
+* ☁️ Cloud deployment using Render
+
+---
+
+## 🧠 Tech Stack
 
 ### Frontend
 
@@ -43,38 +57,19 @@ https://zerodha-backend-wrhv.onrender.com
 
 ---
 
-# Key Features
+## 🏗️ System Architecture
 
-* Portfolio dashboard displaying stock holdings
-* View and track open trading positions
-* Place buy orders through the dashboard
-* REST API integration between frontend and backend
-* Interactive portfolio visualization with charts
-* Clean and modular project architecture
-* Cloud deployment with MongoDB Atlas database
+The application follows a client-server architecture:
 
----
+User → React UI → Axios → Express API → MongoDB → Response → UI
 
-# Project Architecture
-
-```id="5d5uk9"
-TradeVista
-│
-├── frontend
-│   └── React landing page
-│
-├── dashboard
-│   └── React trading dashboard
-│
-├── backend
-│   └── Express.js API connected to MongoDB
-│
-└── README.md
-```
+* Frontend communicates with backend via REST APIs
+* Backend processes requests and interacts with MongoDB
+* Data is dynamically rendered using reusable React components
 
 ---
 
-# API Endpoints
+## 🔌 API Endpoints
 
 | Method | Endpoint      | Description              |
 | ------ | ------------- | ------------------------ |
@@ -84,42 +79,77 @@ TradeVista
 
 ---
 
-# Installation (Run Locally)
+## 🧪 Testing & QA Approach
 
-### 1 Clone the Repository
+* Performed manual testing of all major user flows
+* Validated API endpoints using Thunder Client
+* Tested edge cases:
 
-```bash id="az3v07"
+  * Invalid order inputs
+  * Empty portfolio states
+  * API failure scenarios
+* Verified UI consistency and responsiveness
+
+---
+
+## ⚠️ Challenges & Solutions
+
+* Handling asynchronous API calls → Managed using Axios and proper state updates
+* Managing complex UI state → Optimized using reusable React components
+* Debugging API errors → Used Thunder Client for endpoint testing
+* Ensuring data consistency → Implemented backend validation
+
+---
+
+## 📂 Project Structure
+
+```
+TradeVista/
+│
+├── frontend/        # Landing Page (React)
+├── dashboard/       # Trading Dashboard (React)
+├── backend/         # Express API + MongoDB
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/ayushhhkumar/tradevista-trading-dashboard.git
 cd tradevista-trading-dashboard
 ```
 
 ---
 
-### 2 Setup Backend
+### 2️⃣ Setup Backend
 
-```bash id="2vijow"
+```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file inside the backend folder:
+Create `.env` file inside backend folder:
 
-```id="nsz43h"
+```
 MONGO_URL=your_mongodb_connection_string
 PORT=3002
 ```
 
-Run the backend server:
+Run backend:
 
-```bash id="6wr0ns"
+```bash
 node index.js
 ```
 
 ---
 
-### 3 Setup Dashboard
+### 3️⃣ Setup Dashboard
 
-```bash id="xwwe6y"
+```bash
 cd dashboard
 npm install
 npm start
@@ -127,9 +157,9 @@ npm start
 
 ---
 
-### 4 Setup Frontend
+### 4️⃣ Setup Frontend
 
-```bash id="5crh5p"
+```bash
 cd frontend
 npm install
 npm start
@@ -137,55 +167,43 @@ npm start
 
 ---
 
-# Screenshots
+## 🚀 Deployment
 
-You can include screenshots of:
-
-* Trading Dashboard
-* Holdings Page
-* Buy Order Window
-* Portfolio Charts
-
-Example:
-
-```id="6a8x8g"
-![Dashboard Screenshot](screenshots/dashboard.png)
-```
-
----
-
-# Deployment
-
-The application is deployed using **Render**.
-
-Services used:
+The application is deployed using Render:
 
 * Backend → Render Web Service
 * Dashboard → Render Static Site
 * Frontend → Render Static Site
-* Database → MongoDB Atlas Cloud Database
+* Database → MongoDB Atlas
 
 ---
 
-# Future Improvements
+## 📚 Key Learnings
 
-* User authentication (Login / Signup)
-* Real-time stock market API integration
-* Portfolio analytics dashboard
-* Mobile responsive improvements
-* WebSocket-based live market updates
-
----
-
-# Author
-
-Ayush Kumar
-
-GitHub
-https://github.com/ayushhhkumar
+* Built scalable full-stack application using MERN
+* Gained hands-on experience with REST API design
+* Improved debugging and testing practices
+* Learned cloud deployment and environment setup
 
 ---
 
-# License
+## 🔮 Future Improvements
 
-This project is developed for **learning, educational, and portfolio purposes**.
+* 🔐 User authentication (Login / Signup)
+* 📡 Real-time stock market API integration
+* 📊 Advanced analytics dashboard
+* 📱 Mobile responsiveness improvements
+* ⚡ WebSocket-based live updates
+
+---
+
+## 👨‍💻 Author
+
+**Ayush Kumar**
+🔗 GitHub: https://github.com/ayushhhkumar
+
+---
+
+## 📜 License
+
+This project is created for educational and portfolio purposes.
